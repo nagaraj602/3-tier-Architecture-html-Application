@@ -11,7 +11,7 @@ resource "aws_launch_template" "app_lt" {
     security_groups = [aws_security_group.app_sg.id]
   }
 
-  user_data = <<-EOF
+  user_data = base64encode(<<-EOF
               #!/bin/bash
               yum update -y
               yum install -y httpd jq
@@ -34,4 +34,5 @@ resource "aws_launch_template" "app_lt" {
               # Dummy index.html for testing ALB health checks
               echo "<h1>Application is connected to $DB_HOST</h1>" > /var/www/html/index.html
               EOF
+  )
 }
