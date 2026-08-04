@@ -1,4 +1,4 @@
-# 3-tier-Architecture-html-Application
+# 3-tier-Architecture-html-Application-with-changing-DB_HOST-on-every-refresh
 It is a simple html website which shows, to what database server it is currently connected.
 
 ---
